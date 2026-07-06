@@ -1,1 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
+
+.navbar-toggler{
+    border: none;
+}
+
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+
+.vh{
+    height: calc(100vh - 56px);
+}
