@@ -11,9 +11,9 @@ class Author extends Model
 {
     use HasSlug;
     
-    public function getSlug()
+    public function getSlugOptions(): SlugOptions
     {
-        return SlugOptions::create()->generateSlugsFrom('title')->saveSlugsTo('slug');
+        return SlugOptions::create()->generateSlugsFrom('name')->saveSlugsTo('slug');
     }
 
     public function books(){

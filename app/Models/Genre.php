@@ -11,7 +11,7 @@ class Genre extends Model
 {
     use HasSlug;
 
-    public function getSlug()
+    public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()->generateSlugsFrom('name')->saveSlugsTo('slug');
     }
