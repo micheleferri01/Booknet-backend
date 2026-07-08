@@ -27,7 +27,6 @@ class GenresSeeder extends Seeder
             'Favola',
             'Thriller',
             'Drammatico',
-            'Giallo',
             'Crime',
             'Cyberpunk'
         ];
