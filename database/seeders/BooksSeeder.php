@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Book;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -254,5 +255,14 @@ class BooksSeeder extends Seeder
                 // 'editor_id' => '',
             ]
         ];
+
+        foreach($books as $book){
+            $newBook = new Book();
+            $newBook->title = $book['title'];
+            $newBook->publication_year = $book['publication_year'];
+            $newBook->plot = $book['plot'];
+            $newBook->price = $book['price'];
+            $newBook->save();
+        }
     }
 }
