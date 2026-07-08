@@ -23,6 +23,10 @@ class Book extends Model
         return $this->belongsTo(Editor::class);
     }
 
+    public function genres(){
+        return $this->belongsToMany(Genre::class);
+    }
+
     #[Override]
     public function getRouteKeyName()
     {
