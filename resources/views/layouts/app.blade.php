@@ -43,7 +43,16 @@
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav me-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
+                                <a class="nav-link {{request()->routeIs('authors.*')? 'active':''}}" href="{{url('/authors') }}">{{ __('Autori') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{request()->routeIs('editors.*')? 'active':''}}" href="{{url('/editors') }}">{{ __('Case editrici') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{request()->routeIs('genres.*')? 'active':''}}" href="{{url('/genres') }}">{{ __('Generi') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{request()->routeIs('books.*')? 'active':''}}" href="{{url('/books') }}">{{ __('Libri') }}</a>
                             </li>
                         </ul>
 
@@ -85,8 +94,10 @@
             </div>
         </nav>
 
-        <main class="bg-dark vh">
-            @yield('content')
+        <main class="bg-dark vh text-white">
+            <div class="container">
+                @yield('content')
+            </div>
         </main>
     </div>
 </body>
