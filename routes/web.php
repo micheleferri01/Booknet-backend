@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\EditorController;
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,5 +22,6 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('/authors', AuthorController::class);
 Route::resource('/editors', EditorController::class);
+Route::resource('/genres', GenreController::class);
 
 require __DIR__.'/auth.php';
