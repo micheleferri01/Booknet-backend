@@ -25,7 +25,9 @@
                             Sei sicuro di voler eliminare "{{$editor->name}}" dalle case editrici?
                         </div>
                         <div class="d-flex justify-content-center gap-3 pb-3">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                            <div>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                            </div>
                             <form action="{{route('editors.destroy', $editor)}}" method="post">
                                 @csrf
                                 @method('delete')

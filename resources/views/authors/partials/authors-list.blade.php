@@ -25,7 +25,9 @@
                             Sei sicuro di voler eliminare "{{$author->name}}" dagli autori?
                         </div>
                         <div class="d-flex justify-content-center gap-3 pb-3">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                            <div>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                            </div>
                             <form action="{{route('authors.destroy', $author)}}" method="post">
                                 @csrf
                                 @method('delete')
