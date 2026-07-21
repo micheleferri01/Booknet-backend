@@ -28,7 +28,8 @@ class GenresSeeder extends Seeder
             'Thriller',
             'Drammatico',
             'Crime',
-            'Cyberpunk'
+            'Cyberpunk',
+            'Mistero'
         ];
 
         foreach($genres as $genre){
