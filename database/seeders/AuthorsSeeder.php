@@ -38,7 +38,12 @@ class AuthorsSeeder extends Seeder
             'William Gibson',
             'Isaac Asimov',
             'Jack London',
-            'C.S. Lewis'
+            'C.S. Lewis',
+            'Joël Dicker',
+            'Carlos Ruiz Zafón',
+            'Gillian Flynn',
+            'Liu Cixin',
+            'Matt Haig'
         ];
 
         foreach($authors as $author){
