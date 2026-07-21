@@ -7,7 +7,7 @@
                 <div class="card-header">{{ __('Modifica libro') }}</div>
 
                 <div class="card-body">
-                    <form action="{{route('books.update')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('books.update', $book)}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('put')
                         <div class="mb-4 row">
@@ -92,7 +92,7 @@
                                 @php
                                 $selectedGenres = old('genres', $book->genres->pluck('id')->toArray());
                                 @endphp
-                                <select id="genres" name="genres[]" class="form-control">
+                                <select id="genres" name="genres[]" class="form-control" multiple>
                                     <option value="">Seleziona generi</option>
 
                                     @foreach($genres as $genre)
@@ -107,7 +107,7 @@
                         <div class="mb-4 row">
                             <label for="cover" class="col-md-4 col-form-label text-md-right">Cover del libro</label>
                             <div class="col-md-6">
-                                <input type="file" name="cover" id="cover" class="form-control @error('cover') is-invalid @enderror" required>
+                                <input type="file" name="cover" id="cover" class="form-control @error('cover') is-invalid @enderror" >
                                 @error('cover')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
