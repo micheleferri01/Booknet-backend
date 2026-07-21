@@ -25,7 +25,9 @@ class EditorsSeeder extends Seeder
             'Sperling & Kupfer',
             'Piemme',
             'Garzanti',
-            'De Agostini'
+            'De Agostini',
+            'La Nave di Teseo',
+            'Edizioni e/o',
         ];
 
         foreach($editors as $editor){
