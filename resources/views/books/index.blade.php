@@ -9,11 +9,13 @@
         class="form-control"
         placeholder="Cerca un libro...">
 </form>
-<div id="books-list" class="row gap-3 mt-4">
+<div >
     <div>
         <a href="{{route('books.create')}}" class="btn btn-success mb-3">Aggiungi</a>
     </div>
-    @include('books.partials.books_list')
+    <div id="books-list" class="row g-3 pb-4">
+        @include('books.partials.books_list')
+    </div>
 </div>
 @endsection
 
