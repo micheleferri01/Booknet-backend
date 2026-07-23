@@ -1,9 +1,9 @@
-<div class="card text-bg-dark" style="width: 18rem;">
-    <img src="{{asset('storage/'. $book->cover)}}" class="card-img-top" alt="{{$book->title}}">
-    <div class="card-body">
-        <h5 class="card-title">{{$book->title}}</h5>
-        <p class="card-text">{{$book->price}}</p>
-        <div>
+<div class="card h-100 text-bg-dark p-2" style="width: 18rem;">
+    <img src="{{asset('storage/'. $book->cover)}}" class="card-img-top" alt="{{$book->title}}" style="height: 500px;">
+    <div class="card-body d-flex flex-column">
+        <h5 class="card-title title-book">{{$book->title}}</h5>
+        <p class="card-text fs-3 mt-2">{{$book->price}} &euro;</p>
+        <div class="mt-auto">
             <a href="{{route('books.show', $book)}}" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
             <a href="{{route('books.edit', $book)}}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
             <!-- Button trigger modal -->
