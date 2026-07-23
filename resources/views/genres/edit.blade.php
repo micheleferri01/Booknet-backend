@@ -4,10 +4,10 @@
     <div class="row justify-content-center w-100">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Nuovo genere') }}</div>
+                <div class="card-header">{{ __('Modifica genere') }}</div>
 
                 <div class="card-body">
-                    <form action="{{route('genres.store')}}" method="post">
+                    <form action="{{route('genres.update', $genre)}}" method="post">
                         @csrf
                         @method('put')
                         <div class="mb-4 row">
