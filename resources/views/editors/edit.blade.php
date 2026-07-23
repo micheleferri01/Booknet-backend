@@ -7,7 +7,7 @@
                 <div class="card-header">{{ __('Modifica casa editrice') }}</div>
 
                 <div class="card-body">
-                    <form action="{{route('editors.update')}}" method="post">
+                    <form action="{{route('editors.update', $editor)}}" method="post">
                         @csrf
                         @method('put')
                         <div class="mb-4 row">
