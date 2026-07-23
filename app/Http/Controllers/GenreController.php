@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Genre;
 use Illuminate\Http\Request;
 
@@ -51,7 +52,10 @@ class GenreController extends Controller
      */
     public function show(Genre $genre)
     {
-        return view('genres.show', compact('genre'));
+        $books = Book::whereHas('genres', function ($query) use ($genre) {
+            $query->where('genres.id', $genre->id);
+        })->get();
+        return view('genres.show', compact('genre', 'books'));
     }
 
     /**
@@ -74,7 +78,7 @@ class GenreController extends Controller
         $genre->name = $validatedData['name'];
         $genre->update();
 
-        return redirect()->route('genres.show', compact('genre$genre'));
+        return redirect()->route('genres.show', compact('genre'));
     }
 
     /**
