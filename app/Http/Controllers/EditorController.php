@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Editor;
 use Illuminate\Http\Request;
 
@@ -51,7 +52,8 @@ class EditorController extends Controller
      */
     public function show(Editor $editor)
     {
-        return view('editors.show', compact('editor'));
+        $books = Book::where('editor_id', '=', $editor->id)->get();
+        return view('editors.show', compact('editor', 'books'));
     }
 
     /**

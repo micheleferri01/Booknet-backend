@@ -55,7 +55,7 @@ class AuthorController extends Controller
         $authorId = $author->id;
         $books = Book::whereHas('author', function ($query) use ($authorId){
             return $query->where('author_id', $authorId);
-        });
+        })->get();
         return view('authors.show', compact('author', 'books'));
     }
 
