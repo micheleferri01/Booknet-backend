@@ -144,8 +144,7 @@ class BookController extends Controller
         }
 
 
-        // return redirect()->route('books.show', compact('book'));
-        return redirect()->route('books.index');
+        return redirect()->route('books.show', compact('book'));
     }
 
     /**
