@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container d-flex gap-5 flex-column flex-md-row pt-4">
-    <img src="{{asset('storage/'. $book->cover)}}" alt="{{$book->title}}" class="book-img">
+    <img src="{{$book->cover? asset('storage/'. $book->cover): asset('storage/'. 'books_covers/cover_not_found.jpg')}}" alt="{{$book->title}}" class="book-img">
     <div>
         <h1>{{$book->title}}</h1>
         <ul class="list-unstyled">

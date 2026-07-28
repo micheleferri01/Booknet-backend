@@ -1,5 +1,5 @@
 <div class="card h-100 text-bg-dark p-2" style="width: 18rem;">
-    <img src="{{asset('storage/'. $book->cover)}}" class="card-img-top" alt="{{$book->title}}" style="height: 500px;">
+    <img src="{{$book->cover? asset('storage/'. $book->cover): asset('storage/'. 'books_covers/cover_not_found.jpg')}}" class="card-img-top" alt="{{$book->title}}" style="height: 500px;">
     <div class="card-body d-flex flex-column">
         <h5 class="card-title title-book">{{$book->title}}</h5>
         <p class="card-text fs-3 mt-2">{{$book->price}} &euro;</p>
