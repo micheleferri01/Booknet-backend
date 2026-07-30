@@ -1,14 +1,14 @@
 <?php
 
-use App\Http\Controllers\AuthorController;
-use App\Http\Controllers\BookController;
-use App\Http\Controllers\EditorController;
-use App\Http\Controllers\GenreController;
+use App\Http\Controllers\Admin\AuthorController;
+use App\Http\Controllers\Admin\BookController;
+use App\Http\Controllers\Admin\EditorController;
+use App\Http\Controllers\Admin\GenreController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 Route::get('/dashboard', function () {
@@ -21,9 +21,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('/authors', AuthorController::class);
-Route::resource('/editors', EditorController::class);
-Route::resource('/genres', GenreController::class);
-Route::resource('/books', BookController::class);
+Route::resource('/authors', AuthorController::class)->middleware(['auth', 'verified']);
+Route::resource('/editors', EditorController::class)->middleware(['auth', 'verified']);
+Route::resource('/genres', GenreController::class)->middleware(['auth', 'verified']);
+Route::resource('/books', BookController::class)->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
