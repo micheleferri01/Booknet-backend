@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Book;
 use App\Models\Genre;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class GenreController extends Controller

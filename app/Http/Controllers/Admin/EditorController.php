@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Book;
 use App\Models\Editor;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class EditorController extends Controller
