@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class AuthorController extends Controller
 {
     public function index() {
-        $authors = Author::orderBy('name');
+        $authors = Author::orderBy('name')->get();
 
         return response()->json([
             'success' => true,
