@@ -33,17 +33,10 @@ class BookController extends Controller
             });
         })->orderBy('title')->get();
 
-        if(count($books) == 0){
-            return response()->json([
-                'success' => false,
-                'message' => 'Nessun libro trovato con i parametri inseriti.'
-            ], 404);
-        }else{ 
-            return response()->json([
-                'success'=> true,
-                'data'=> $books
-            ], 200);
-        }
+        return response()->json([
+            'success'=> true,
+            'data'=> $books
+        ], 200);
 
     }
 
