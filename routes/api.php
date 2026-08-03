@@ -20,6 +20,8 @@ Route::get('/editors', [EditorController::class, 'index']);
 
 Route::get('/genres', [GenreController::class, 'index']);
 
+Route::post('/cart', [CartController::class, 'index']);
+
 Route::fallback(function () {
     return response()->json(['message' => 'Endpoint API non esistente.'], 404);
 });
