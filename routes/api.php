@@ -5,8 +5,11 @@ use App\Http\Controllers\Api\BookController;
 use App\Http\Controllers\api\EditorController;
 use App\Http\Controllers\api\GenreController;
 use App\Http\Controllers\Api\CartController;
+use App\Http\Controllers\Api\CheckoutController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+use App\Models\Order;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -22,6 +25,9 @@ Route::get('/editors', [EditorController::class, 'index']);
 Route::get('/genres', [GenreController::class, 'index']);
 
 Route::post('/cart', [CartController::class, 'index']);
+
+Route::post('/checkout', [CheckoutController::class, 'checkout']);
+
 
 Route::fallback(function () {
     return response()->json(['message' => 'Endpoint API non esistente.'], 404);
