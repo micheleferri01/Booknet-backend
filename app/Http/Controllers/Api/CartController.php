@@ -4,16 +4,19 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Book;
 
 class CartController extends Controller
 {
     public function index(Request $request)
     {
+        
         $data = $request->validate([
             'books' => ['required', 'array'],
             'books.*.id' => ['required', 'integer'],
             'books.*.quantity' => ['required', 'integer', 'min:1'],
         ]);
+
 
         $items = collect($data['books']);
 
