@@ -27,6 +27,10 @@ class Book extends Model
         return $this->belongsToMany(Genre::class);
     }
 
+    public function orders(){
+        return $this->belongsToMany(Order::class);
+    }
+
     #[Override]
     public function getRouteKeyName()
     {
