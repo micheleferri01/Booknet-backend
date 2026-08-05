@@ -4,6 +4,7 @@ use App\Http\Controllers\api\AuthorController;
 use App\Http\Controllers\Api\BookController;
 use App\Http\Controllers\api\EditorController;
 use App\Http\Controllers\api\GenreController;
+use App\Http\Controllers\Api\CartController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
