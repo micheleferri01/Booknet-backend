@@ -25,9 +25,9 @@
 
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm" data-bs-theme="dark">
             <div class="d-flex justify-content-between align-items-center flex-wrap w-100 px-3">
-                <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+                <p class="navbar-brand d-flex align-items-center m-0">
                     {{ config('app.name', 'Booknet')}}
-                </a>
+                </è>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -53,6 +53,10 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {{request()->routeIs('books.*')? 'active':''}}" href="{{url('/books') }}">{{ __('Libri') }}</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link {{request()->routeIs('books.*')? 'active':''}}" href="{{url('/orders') }}">{{ __('Ordini') }}</a>
                             </li>
                         </ul>
 
