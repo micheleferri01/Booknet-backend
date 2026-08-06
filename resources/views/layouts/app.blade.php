@@ -27,7 +27,7 @@
             <div class="d-flex justify-content-between align-items-center flex-wrap w-100 px-3">
                 <p class="navbar-brand d-flex align-items-center m-0">
                     {{ config('app.name', 'Booknet')}}
-                </è>
+                </p>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
