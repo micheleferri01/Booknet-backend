@@ -33,6 +33,7 @@ return [
     |            "postmark", "log", "array", "failover", "roundrobin"
     |
     */
+    'admin_address' =>env('MAIL_ADMIN_ADDRESS'),
 
     'mailers' => [
 
@@ -46,7 +47,6 @@ return [
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
-            'admin_address' =>env('MAIL_ADMIN_ADDRESS'),
         ],
 
         'ses' => [
