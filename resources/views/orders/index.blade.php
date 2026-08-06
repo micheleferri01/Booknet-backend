@@ -117,9 +117,11 @@
 
                             <td colspan="12">
 
-                                <a href="route"></a>
 
                                 <div class="border rounded p-3 bg-light">
+
+                                <p class="d-lg-none"><span class="fw-semibold">Email:</span> {{$order->email}}</p>
+                                <p class="d-lg-none"><span class="fw-semibold">Data:</span> {{$order->created_at->format('d/m/Y H:i')}}</p>
 
                                     <table class="table table-sm mb-0">
 
